@@ -1,0 +1,23 @@
+{
+  "name": "in2code/in2frontendauthentication",
+  "description": "Simulate fe_groups login by IP address",
+  "version": "1.0.0",
+  "keywords": ["typo3", "ip", "felogin"],
+  "homepage": "https://bitbucket.org/in2code/in2frontendauthentication/overview",
+  "authors": [
+    {
+      "name": "Alex Kellner",
+      "email": "alexander.kellner@in2code.de"
+    }
+  ],
+  "type": "typo3-cms-extension",
+  "license": "GPL-3.0",
+  "require": {
+    "typo3/cms": ">=6.2.0 <9.9.99"
+  },
+  "autoload": {
+    "psr-4": {
+      "In2code\\In2frontendauthentication\\": "Classes"
+    }
+  }
+}
