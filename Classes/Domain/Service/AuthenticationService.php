@@ -25,29 +25,32 @@ namespace In2code\In2frontendauthentication\Domain\Service;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+use In2code\In2frontendauthentication\Domain\Repository\FeGroupsRepository;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3\CMS\Sv\AuthenticationService as AuthenticationServiceCore;
 
 /**
- * Class Contact
+ * Class AuthenticationService
+ * @package In2code\In2frontendauthentication\Domain\Service
  */
 class AuthenticationService extends AuthenticationServiceCore
 {
-    public function getUser()
-    {
-        return parent::getUser();
-    }
-
-    public function authUser(array $user)
-    {
-        return parent::authUser($user);
-    }
-
+    /**
+     * This method is called in fronted and should bypass the authentication for content elements and pages
+     *
+     * @param array $user
+     * @param array $knownGroups
+     * @return array
+     */
     public function getGroups($user, $knownGroups)
     {
-//        return parent::getGroups($user, $knownGroups);
-        $row = (array)$this->getDatabaseConnection()->exec_SELECTgetSingleRow('*', 'fe_groups', 'uid=1');
-//        \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($row, 'in2code: ' . __CLASS__ . ':' . __LINE__);
-        return $row;
+        $feGroupsRepository = GeneralUtility::makeInstance(ObjectManager::class)
+            ->get(FeGroupsRepository::class);
+        $feGroup = $feGroupsRepository->findByCurrentIpAddress();
+        if (!empty($feGroup)) {
+            return $feGroup;
+        }
+        return parent::getGroups($user, $knownGroups);
     }
-
 }

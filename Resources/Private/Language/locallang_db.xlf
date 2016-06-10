@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-04-13T15:49:07Z" product-name="in2frontendauthentication">
+		<header/>
+		<body>
+			<trans-unit id="fe_groups.ip_mask">
+				<source>IP access (e.g. "192.168.*.*, 133.145.219.8")</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2014-05-02T12:00:00Z" product-name="powermail">
+		<header/>
+		<body>
+			<trans-unit id="fe_groups.ip_mask">
+				<source>Autologin with IP address (e.g. "192.168.*.*, 133.145.219.8")</source>
+				<target state="translated">Autologin über IP-Adresse (z.B. )</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
