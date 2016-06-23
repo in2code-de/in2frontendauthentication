@@ -5,7 +5,7 @@
 		<body>
 			<trans-unit id="fe_groups.ip_mask">
 				<source>Autologin with IP address (e.g. "192.168.*.*, 133.145.219.8")</source>
-				<target state="translated">Autologin über IP-Adresse (z.B. )</target>
+				<target state="translated">Autologin über IP-Adresse (z.B. "192.168.*.*, 133.145.219.8")</target>
 			</trans-unit>
 		</body>
 	</file>
