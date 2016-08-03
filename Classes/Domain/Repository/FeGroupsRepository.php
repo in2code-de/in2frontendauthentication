@@ -42,13 +42,13 @@ class FeGroupsRepository
      */
     public function findByCurrentIpAddress()
     {
-        $row = $this->getDatabaseConnection()->exec_SELECTgetSingleRow(
+        $rows = $this->getDatabaseConnection()->exec_SELECTgetRows(
             '*',
             self::TABLE_NAME,
             'deleted = 0 and hidden = 0' . $this->getIpQueryString()
         );
-        if ($row !== false) {
-            return $row;
+        if (!empty($rows)) {
+            return $rows;
         }
         return [];
     }

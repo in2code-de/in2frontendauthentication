@@ -47,9 +47,9 @@ class AuthenticationService extends AuthenticationServiceCore
     {
         $feGroupsRepository = GeneralUtility::makeInstance(ObjectManager::class)
             ->get(FeGroupsRepository::class);
-        $feGroup = $feGroupsRepository->findByCurrentIpAddress();
-        if (!empty($feGroup)) {
-            return $feGroup;
+        $feGroups = $feGroupsRepository->findByCurrentIpAddress();
+        if (!empty($feGroups)) {
+            return $feGroups;
         }
         return parent::getGroups($user, $knownGroups);
     }
