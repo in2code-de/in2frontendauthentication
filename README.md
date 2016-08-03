@@ -9,6 +9,8 @@ Set ip addresses in fe_groups.
 
 ### Changelog ###
 
+1.0.2 [BUGFIX] Allow multiple usergroups
+
 1.0.1 [BUGFIX] Small fix in german locallang
 
 1.0.0 [TASK] Initial release
