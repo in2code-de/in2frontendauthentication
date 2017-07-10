@@ -17,3 +17,14 @@ defined('TYPO3_MODE') || die();
         'className' => \In2code\In2frontendauthentication\Domain\Service\AuthenticationService::class,
     ]
 );
+
+/** @var \TYPO3\CMS\Extbase\SignalSlot\Dispatcher $signalSlotDispatcher */
+$signalSlotDispatcher = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\SignalSlot\\Dispatcher');
+$signalSlotDispatcher->connect(
+    \BeechIt\FalSecuredownload\Security\CheckPermissions::class,
+    'AddCustomGroups',
+    \In2code\In2frontendauthentication\Slot\AddCustomGroupsSlot::class,
+    'addCustomGroups'
+);
+
+
