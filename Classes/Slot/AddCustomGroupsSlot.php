@@ -8,19 +8,16 @@ use In2code\In2frontendauthentication\Domain\Repository\FeGroupsRepository;
 class AddCustomGroupsSlot
 {
 
-    public function addCustomGroups($checkPermissions)
+    public function addCustomGroups($customGroups)
     {
         $feGroupsRepository = GeneralUtility::makeInstance(ObjectManager::class)
             ->get(FeGroupsRepository::class);
         $feGroups = $feGroupsRepository->findByCurrentIpAddress();
 
-
-
-        $customGroups = [];
         foreach ($feGroups as $feGroup) {
             $customGroups[] = $feGroup['uid'];
         }
 
-        $checkPermissions->addCustomGroups($customGroups);
+        return array($customGroups);
     }
 }
