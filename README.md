@@ -19,7 +19,7 @@ But "showAtAnyLogin" or "hideAtAnyLogin" is not supported at the moment.
 
 | Version    | Date       | State      | Description                                                                  |
 | ---------- | ---------- | ---------- | ---------------------------------------------------------------------------- |
-| 1.1.0      | 2017-06-10 | Feature    | Support extension FalSecuredownload                                          |
+| 1.1.0      | 2017-06-10 | Feature    | Support EXT:fal_securedownload >= version 2.0.0                              |
 | 1.0.2      | 2016-08-03 | Bugfix     | Allow multiple usergroups                                                    |
 | 1.0.1      | 2016-06-23 | Bugfix     | Small fix in german locallang                                                |
 | 1.0.0      | 2016-06-10 | Task       | Initial release                                                              |
