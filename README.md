@@ -15,11 +15,16 @@ But "showAtAnyLogin" or "hideAtAnyLogin" is not supported at the moment.
 * TYPO3 8.7
 * TYPO3 7.6
 
+## Supported Extension
+
+* fal_securedownload in version 2.0 or newer
+
 ## Changelog
 
 | Version    | Date       | State      | Description                                                                  |
 | ---------- | ---------- | ---------- | ---------------------------------------------------------------------------- |
-| 1.1.0      | 2017-06-10 | Feature    | Support EXT:fal_securedownload >= version 2.0.0                              |
+| 1.1.1      | 2017-07-18 | Bugfix     | Signal update from fal_securedownload                                        |
+| 1.1.0      | 2017-07-10 | Feature    | Support EXT:fal_securedownload >= version 2.0.0                              |
 | 1.0.2      | 2016-08-03 | Bugfix     | Allow multiple usergroups                                                    |
 | 1.0.1      | 2016-06-23 | Bugfix     | Small fix in german locallang                                                |
 | 1.0.0      | 2016-06-10 | Task       | Initial release                                                              |
