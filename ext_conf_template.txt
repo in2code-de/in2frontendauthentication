@@ -1,0 +1,2 @@
+# cat=basic/enable;; type=boolean; label=Set "staticfilecache" cookie, if extension is installed
+set_sfc_cookie =
