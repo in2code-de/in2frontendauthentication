@@ -10,6 +10,14 @@ Set ip addresses in fe_groups.
 **Note:** This allows you to show/hide contentelements, pages and other records to a specific usergroup.
 But "showAtAnyLogin" or "hideAtAnyLogin" is not supported at the moment.
 
+## Static File Cache
+
+The extension staticfilecache sets a cookie to identify, whether a user is logged in and the static file cache may not
+be used. It hooks into the normal authentication process, when the user is initialized. With 
+EXT:in2frontendauthentication there are no specific frontend users, so it must be set here too.
+
+This feature can be enabled in the extension settings in the extension manager. 
+
 ## Supported TYPO3-Versions
 
 * TYPO3 8.7
