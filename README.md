@@ -31,6 +31,7 @@ This feature can be enabled in the extension settings in the extension manager.
 
 | Version    | Date       | State      | Description                                                                  |
 | ---------- | ---------- | ---------- | ---------------------------------------------------------------------------- |
+| 2.0.0      | 2019-09-30 | Feature    | Respect staticfilecache cookies                                              |
 | 1.1.1      | 2017-07-18 | Bugfix     | Signal update from fal_securedownload                                        |
 | 1.1.0      | 2017-07-10 | Feature    | Support EXT:fal_securedownload >= version 2.0.0                              |
 | 1.0.2      | 2016-08-03 | Bugfix     | Allow multiple usergroups                                                    |
