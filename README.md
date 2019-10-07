@@ -31,6 +31,7 @@ This feature can be enabled in the extension settings in the extension manager.
 
 | Version    | Date       | State      | Description                                                                  |
 | ---------- | ---------- | ---------- | ---------------------------------------------------------------------------- |
+| 2.0.2      | 2019-10-07 | Bugfix     | Change namespace to CookieService class                                      |
 | 2.0.1      | 2019-10-07 | Bugfix     | Fix exception when instantiating CookieService class of staticfilecache      |
 | 2.0.0      | 2019-09-30 | Feature    | Respect staticfilecache cookies                                              |
 | 1.1.1      | 2017-07-18 | Bugfix     | Signal update from fal_securedownload                                        |
