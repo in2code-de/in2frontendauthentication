@@ -72,7 +72,7 @@ class AuthenticationService extends AuthenticationServiceCore
             $setSfcCookie = $extensionConfiguration['set_sfc_cookie'];
 
             $cookieService = GeneralUtility::makeInstance(
-                \SFC\Staticfilecache\Service\CookieService\CookieService::class
+                \SFC\Staticfilecache\Service\CookieService::class
             );
 
             if ($setSfcCookie === '1' && $ipBasedLogin === true) {
