@@ -75,7 +75,7 @@ class AuthenticationService extends AuthenticationServiceCore
                 \SFC\Staticfilecache\Service\CookieService::class
             );
 
-            if ($setSfcCookie === '1' && $ipBasedLogin === true) {
+            if ($setSfcCookie['value'] === '1' && $ipBasedLogin === true) {
                 $cookieService->setCookie(time() + 3600);
             } else {
                 $cookieService->setCookie(time() - 3600);
