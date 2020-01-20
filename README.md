@@ -20,6 +20,7 @@ This feature can be enabled in the extension settings in the extension manager.
 
 ## Supported TYPO3-Versions
 
+* TYPO3 9.5
 * TYPO3 8.7
 * TYPO3 7.6
 
@@ -31,6 +32,7 @@ This feature can be enabled in the extension settings in the extension manager.
 
 | Version    | Date       | State      | Description                                                                  |
 | ---------- | ---------- | ---------- | ---------------------------------------------------------------------------- |
+| 3.0.0      | 2020-01-20 | Feature    | Support TYPO3 V9. This is the last release without composer requirement      |
 | 2.0.3      | 2019-10-07 | Bugfix     | Fix another regression for the latest feature                                |
 | 2.0.2      | 2019-10-07 | Bugfix     | Change namespace to CookieService class                                      |
 | 2.0.1      | 2019-10-07 | Bugfix     | Fix exception when instantiating CookieService class of staticfilecache      |
