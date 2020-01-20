@@ -1,4 +1,5 @@
 <?php
+
 namespace In2code\In2frontendauthentication\Domain\Service;
 
 /***************************************************************
@@ -26,7 +27,7 @@ namespace In2code\In2frontendauthentication\Domain\Service;
  ***************************************************************/
 
 use In2code\In2frontendauthentication\Domain\Repository\FeGroupsRepository;
-use TYPO3\CMS\Extensionmanager\Utility\ConfigurationUtility;
+use In2code\In2frontendauthentication\Utility\ExtensionConfigurationUtility;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
@@ -34,6 +35,7 @@ use TYPO3\CMS\Sv\AuthenticationService as AuthenticationServiceCore;
 
 /**
  * Class AuthenticationService
+ *
  * @package In2code\In2frontendauthentication\Domain\Service
  */
 class AuthenticationService extends AuthenticationServiceCore
@@ -65,17 +67,11 @@ class AuthenticationService extends AuthenticationServiceCore
     private function setCookie(bool $ipBasedLogin)
     {
         if (ExtensionManagementUtility::isLoaded('staticfilecache')) {
-            $configurationUtility = GeneralUtility::makeInstance(ObjectManager::class)
-                ->get(ConfigurationUtility::class);
-
-            $extensionConfiguration = $configurationUtility->getCurrentConfiguration('in2frontendauthentication');
-            $setSfcCookie = $extensionConfiguration['set_sfc_cookie'];
-
             $cookieService = GeneralUtility::makeInstance(
                 \SFC\Staticfilecache\Service\CookieService::class
             );
 
-            if ($setSfcCookie['value'] === '1' && $ipBasedLogin === true) {
+            if (ExtensionConfigurationUtility::isSfcCookie() && $ipBasedLogin === true) {
                 $cookieService->setCookie(time() + 3600);
             } else {
                 $cookieService->setCookie(time() - 3600);

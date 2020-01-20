@@ -25,7 +25,8 @@ namespace In2code\In2frontendauthentication\Domain\Repository;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use TYPO3\CMS\Core\Database\DatabaseConnection;
+use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Database\Query\Expression\CompositeExpression;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
@@ -42,34 +43,47 @@ class FeGroupsRepository
      */
     public function findByCurrentIpAddress()
     {
-        $rows = $this->getDatabaseConnection()->exec_SELECTgetRows(
-            '*',
-            self::TABLE_NAME,
-            'deleted = 0 and hidden = 0' . $this->getIpQueryString()
-        );
-        if (!empty($rows)) {
-            return $rows;
+        /**
+         * @var $queryBuilder \TYPO3\CMS\Core\Database\Query\QueryBuilder
+         */
+        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable(self::TABLE_NAME);
+
+        /**
+         * @var $statement \Doctrine\DBAL\Driver\Mysqli\MysqliStatement
+         */
+        $statement = $queryBuilder->select('*')
+            ->from(self::TABLE_NAME)
+            ->where(
+                $queryBuilder->expr()->eq('deleted', 0),
+                $queryBuilder->expr()->eq('hidden', 0),
+                $this->getIpQueryExpression($queryBuilder)
+            )
+            ->execute();
+
+        if($statement->rowCount()) {
+            return $statement->fetchAll();
         }
+
         return [];
     }
 
     /**
-     * Build string like
+     * Build expression like
      *      ip_mask like "%1.1.1.1%" and ip_mask like "%2.2.2.2%"
      *
-     * @return string
+     * @return CompositeExpression
      */
-    protected function getIpQueryString()
+    protected function getIpQueryExpression($queryBuilder)
     {
-        $queryString = ' and (';
-        foreach ($this->getCurrentIpAddresses() as $ipAddress) {
-            $databaseConnection = $this->getDatabaseConnection();
-            $ipAddress = $databaseConnection->quoteStr($ipAddress, self::TABLE_NAME);
-            $queryString .= 'ip_mask like "%' . $ipAddress .  '%" or ';
+        $currentIpAdresses = $this->getCurrentIpAddresses();
+        if (!empty($currentIpAdresses)) {
+            $orX = $queryBuilder->expr()->orX();
+            foreach ($currentIpAdresses as $value) {
+                $orX->add($queryBuilder->expr()->like('ip_mask', "'%$value%'"));
+            }
         }
-        $queryString = rtrim($queryString, ' or ');
-        $queryString .= ')';
-        return $queryString;
+
+        return $orX;
     }
 
     /**
