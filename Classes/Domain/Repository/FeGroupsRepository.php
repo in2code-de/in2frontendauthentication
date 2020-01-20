@@ -26,7 +26,6 @@ namespace In2code\In2frontendauthentication\Domain\Repository;
  ***************************************************************/
 
 use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Database\DatabaseConnection;
 use TYPO3\CMS\Core\Database\Query\Expression\CompositeExpression;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
