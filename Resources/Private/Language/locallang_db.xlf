@@ -4,7 +4,7 @@
 		<header/>
 		<body>
 			<trans-unit id="fe_groups.ip_mask">
-				<source>IP access (e.g. "192.168.*.*, 133.145.219.8")</source>
+				<source>IP access (e.g. "192.168.*.*, 133.145.219.8, 2001:0000:0000:08d3:1319:8a2e:0370:1334, 2001:0000:0000:08d3:1319:*:*:*")</source>
 			</trans-unit>
 		</body>
 	</file>
