@@ -4,8 +4,8 @@
 		<header/>
 		<body>
 			<trans-unit id="fe_groups.ip_mask">
-				<source>Autologin with IP address (e.g. "192.168.*.*, 133.145.219.8")</source>
-				<target state="translated">Autologin über IP-Adresse (z.B. "192.168.*.*, 133.145.219.8")</target>
+				<source>Autologin with IP address (e.g. "192.168.*.*, 133.145.219.8, 2001:0000:0000:08d3:1319:8a2e:0370:1334, 2001:0000:0000:08d3:1319:*:*:*")</source>
+				<target state="translated">Autologin über IP-Adresse (z.B. "192.168.*.*, 133.145.219.8, 2001:0000:0000:08d3:1319:8a2e:0370:1334, 2001:0000:0000:08d3:1319:*:*:*")</target>
 			</trans-unit>
 		</body>
 	</file>

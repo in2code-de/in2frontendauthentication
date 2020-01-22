@@ -10,6 +10,10 @@ Set ip addresses in fe_groups.
 **Note:** This allows you to show/hide contentelements, pages and other records to a specific usergroup.
 But "showAtAnyLogin" or "hideAtAnyLogin" is not supported at the moment.
 
+## Requirements
+
+This extension requires an installation via composer because we use the mlocati/ip-lib.
+
 ## Static File Cache
 
 The extension staticfilecache sets a cookie to identify, whether a user is logged in and the static file cache may not
@@ -32,6 +36,7 @@ This feature can be enabled in the extension settings in the extension manager.
 
 | Version    | Date       | State      | Description                                                                  |
 | ---------- | ---------- | ---------- | ---------------------------------------------------------------------------- |
+| 4.0.0      | 2020-01-22 | Feature    | Add support for IP V6. This is the first Release with the composer requirement "mlocati/ip-lib" |
 | 3.0.0      | 2020-01-20 | Feature    | Support TYPO3 V9. This is the last release without composer requirement      |
 | 2.0.3      | 2019-10-07 | Bugfix     | Fix another regression for the latest feature                                |
 | 2.0.2      | 2019-10-07 | Bugfix     | Change namespace to CookieService class                                      |
