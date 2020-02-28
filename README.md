@@ -1,16 +1,26 @@
+# TYPO3 extension in2frontendauthentication
+
 ## Introduction
 
-TYPO3 extension to simulate fe-login for a group if IP-address fits.
+TYPO3 extension to simulate fe-login for a group if IP-address (IPv4 and IPv6) fits.
 Set ip addresses in fe_groups.
 
-<img src="https://box.everhelper.me/attachment/504010/a2afed54-7cb5-4e1a-bd0c-f21398236304/262407-2k6yGwBCEmgeKSJU/screen.png" alt="example usergroup configuration" />
+## Introduction
 
-<img src="https://box.everhelper.me/attachment/504018/a2afed54-7cb5-4e1a-bd0c-f21398236304/262407-6xMmMIsdvaIv8tUz/screen.png" alt="example contentelement that's normally only visible for users of group 'Test'" />
+![Set an IP address in a fe_groups record](Documentation/Images/backend_fegroup.png)
+
+![Define that a content should only be shown if a group has authenticated](Documentation/Images/backend_pagecontent.png)
+
+![Show content if authenticated in frontend](Documentation/Images/frontend_pagecontent.png)
 
 **Note:** This allows you to show/hide contentelements, pages and other records to a specific usergroup.
-But "showAtAnyLogin" or "hideAtAnyLogin" is not supported at the moment.
+But "showAtAnyLogin" or "hideAtAnyLogin" is not supported.
 
-## Requirements
+## Requirements and installation
+
+```
+composer require in2code/in2frontendauthentication
+```
 
 This extension requires an installation via composer because we use the mlocati/ip-lib.
 
