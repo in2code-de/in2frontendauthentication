@@ -3,7 +3,7 @@
 ## Introduction
 
 TYPO3 extension to simulate fe-login for a group if IP-address (IPv4 and IPv6) fits.
-Set ip addresses in fe_groups.
+You can define multiple IPs and ranges per group in backend.
 
 ## Introduction
 
@@ -22,25 +22,44 @@ But "showAtAnyLogin" or "hideAtAnyLogin" is not supported.
 composer require in2code/in2frontendauthentication
 ```
 
-This extension requires an installation via composer because we use the mlocati/ip-lib.
+This extension requires an installation via composer because of the usage of library s1lentium/iptools.
+
+This feature can be enabled in the extension settings in the extension manager. 
+
+## Example for IP and IP-Range definitions in fe_groups.ip_mask
+
+```
+127.0.0.1
+127.0.0.0/12
+127.0.0.*
+1001:5a3:3100:0000:0000:0000:0000:0000
+1001:5a3:3100:::::
+1001:5a3:3100::/40
+1001:5a3:3100:0000:*:*:*:*
+```
+
+You can use single ip addresses or ranges with subnetmask definition (e.g. `/8`). In addition it is possible to use
+`*` as wildcards.
+Simply define more ip addresses or ranges and split them with comma.
+
+## Supported TYPO3- and PHP-Versions
+
+* TYPO3 9.5
+* TYPO3 8.7
+* TYPO3 7.6
+
+* PHP 7.2 and higher
+
+## Supported Extension
+
+* fal_securedownload in version 2.0 or newer
+* staticfilecache (see notes below)
 
 ## Static File Cache
 
 The extension staticfilecache sets a cookie to identify, whether a user is logged in and the static file cache may not
 be used. It hooks into the normal authentication process, when the user is initialized. With 
 EXT:in2frontendauthentication there are no specific frontend users, so it must be set here too.
-
-This feature can be enabled in the extension settings in the extension manager. 
-
-## Supported TYPO3-Versions
-
-* TYPO3 9.5
-* TYPO3 8.7
-* TYPO3 7.6
-
-## Supported Extension
-
-* fal_securedownload in version 2.0 or newer
 
 ## Changelog
 
