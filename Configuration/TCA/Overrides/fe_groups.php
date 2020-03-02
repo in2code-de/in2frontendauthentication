@@ -23,5 +23,5 @@ $columns = [
     FeGroupsRepository::TABLE_NAME,
     'ip_mask',
     '',
-    ''
+    'after:hidden'
 );
