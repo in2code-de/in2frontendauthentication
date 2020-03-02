@@ -12,11 +12,11 @@
   "type": "typo3-cms-extension",
   "license": "GPL-3.0",
   "require": {
-    "typo3/cms": ">=7.6.0 <9.9.99",
-    "mlocati/ip-lib": "1.*"
+    "php": "^7.2",
+    "typo3/cms": ">=8.7.0 <9.9.99",
+    "s1lentium/iptools": "1.1.*"
   },
   "replace": {
-    "in2frontendauthentication": "self.version",
     "typo3-ter/in2frontendauthentication": "self.version"
   },
   "autoload": {
