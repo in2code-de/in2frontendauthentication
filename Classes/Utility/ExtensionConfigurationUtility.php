@@ -11,9 +11,9 @@ class ExtensionConfigurationUtility
     /**
      * @param $path
      * @param string $extensionKey
-     * @return array
+     * @return string
      */
-    public static function getExtensionConfiguration($path, $extensionKey = 'in2frontendauthentication'): array
+    public static function getExtensionConfiguration($path, $extensionKey = 'in2frontendauthentication'): string
     {
         $version = \TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionStringToArray(
             VersionNumberUtility::getCurrentTypo3Version()
@@ -21,7 +21,7 @@ class ExtensionConfigurationUtility
 
         // TYPO3 9 and above
         if ($version['version_main'] >= 9) {
-            $value = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class)
+            $value = (string)GeneralUtility::makeInstance(\TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class)
                 ->get($extensionKey, $path);
         } else {
             // TYPO3 8 and below
@@ -29,7 +29,7 @@ class ExtensionConfigurationUtility
                 ->get(\TYPO3\CMS\Extensionmanager\Utility\ConfigurationUtility::class)
                 ->getCurrentConfiguration($extensionKey);
 
-            $value = $extConfiguration[$path]['value'];
+            $value = (string)$extConfiguration[$path]['value'];
         }
 
         return $value;
