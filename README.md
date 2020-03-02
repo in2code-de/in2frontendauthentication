@@ -65,6 +65,7 @@ EXT:in2frontendauthentication there are no specific frontend users, so it must b
 
 | Version    | Date       | State      | Description                                                                  |
 | ---------- | ---------- | ---------- | ---------------------------------------------------------------------------- |
+| 5.0.0      | 2020-03-02 | Feature    | Support subnetmask for IPv4 and IPv6 now in definitions, update requirements |
 | 4.0.0      | 2020-01-22 | Feature    | Add support for IP V6. This is the first Release with the composer requirement "mlocati/ip-lib" |
 | 3.0.0      | 2020-01-20 | Feature    | Support TYPO3 V9. This is the last release without composer requirement      |
 | 2.0.3      | 2019-10-07 | Bugfix     | Fix another regression for the latest feature                                |
