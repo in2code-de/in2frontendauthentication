@@ -65,6 +65,7 @@ EXT:in2frontendauthentication there are no specific frontend users, so it must b
 
 | Version    | Date       | State      | Description                                                                  |
 | ---------- | ---------- | ---------- | ---------------------------------------------------------------------------- |
+| 5.0.2      | 2020-03-11 | Bugfix     | Update dependencies to typo3/cms-core to enable installation in TYPO3 9      |
 | 5.0.1      | 2020-03-02 | Bugfix     | Prevent exception in ExtensionConfigurationUtility                           |
 | 5.0.0      | 2020-03-02 | Feature    | Support subnetmask for IPv4 and IPv6 now in definitions, update requirements |
 | 4.0.0      | 2020-01-22 | Feature    | Add support for IP V6. This is the first Release with the composer requirement "mlocati/ip-lib" |
