@@ -42,9 +42,8 @@ Simply define more ip addresses or ranges and split them with comma.
 
 ## Supported TYPO3- and PHP-Versions
 
+* TYPO3 10.4
 * TYPO3 9.5
-* TYPO3 8.7
-* TYPO3 7.6
 
 * PHP 7.2 and higher
 
