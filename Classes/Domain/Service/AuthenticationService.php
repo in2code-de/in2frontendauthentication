@@ -7,7 +7,7 @@ use In2code\In2frontendauthentication\Utility\ExtensionConfigurationUtility;
 use In2code\In2frontendauthentication\Utility\ObjectUtility;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Sv\AuthenticationService as AuthenticationServiceCore;
+use TYPO3\CMS\Core\Authentication\AuthenticationService as AuthenticationServiceCore;
 
 /**
  * Class AuthenticationService
