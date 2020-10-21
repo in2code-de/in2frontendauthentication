@@ -22,9 +22,7 @@ But "showAtAnyLogin" or "hideAtAnyLogin" is not supported.
 composer require in2code/in2frontendauthentication
 ```
 
-This extension requires an installation via composer because of the usage of library s1lentium/iptools.
-
-This feature can be enabled in the extension settings in the extension manager. 
+This extension **requires an installation via composer** because of the usage of library s1lentium/iptools.
 
 ## Example for IP and IP-Range definitions in fe_groups.ip_mask
 
@@ -61,10 +59,13 @@ The extension staticfilecache sets a cookie to identify, whether a user is logge
 be used. It hooks into the normal authentication process, when the user is initialized. With 
 EXT:in2frontendauthentication there are no specific frontend users, so it must be set here too.
 
+This feature can be enabled in the extension settings in the extension manager. 
+
 ## Changelog
 
 | Version    | Date       | State      | Description                                                                  |
 | ---------- | ---------- | ---------- | ---------------------------------------------------------------------------- |
+| 6.0.0      | 2020-10-21 | Task       | Update for TYPO3 9.5 or 10.4                                                 |
 | 5.0.2      | 2020-03-11 | Bugfix     | Update dependencies to typo3/cms-core to enable installation in TYPO3 9      |
 | 5.0.1      | 2020-03-02 | Bugfix     | Prevent exception in ExtensionConfigurationUtility                           |
 | 5.0.0      | 2020-03-02 | Feature    | Support subnetmask for IPv4 and IPv6 now in definitions, update requirements |

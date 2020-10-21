@@ -15,7 +15,7 @@ $EM_CONF[$_EXTKEY] = [
     'description' => 'Authenticate every visitor as a defined frontend user if IP matches',
     'category' => 'plugin',
     'shy' => 0,
-    'version' => '5.0.2',
+    'version' => '6.0.0',
     'dependencies' => 'cms,extbase,fluid',
     'conflicts' => '',
     'priority' => '',
@@ -34,7 +34,7 @@ $EM_CONF[$_EXTKEY] = [
     'CGLcompliance_note' => '',
     'constraints' => [
         'depends' => [
-            'typo3' => '8.7.0-9.99.99',
+            'typo3' => '9.5.0-10.99.99',
             'php' => '7.2.0-7.99.99'
         ],
         'conflicts' => [],
