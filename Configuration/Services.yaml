@@ -1,0 +1,6 @@
+services:
+  In2code\In2frontendauthentication\EventListener\ModifyFeGroups:
+    tags:
+      - name: event.listener
+        identifier: 'modifyFeGroupsListener'
+        event: TYPO3\CMS\Frontend\Authentication\ModifyResolvedFrontendGroupsEvent
