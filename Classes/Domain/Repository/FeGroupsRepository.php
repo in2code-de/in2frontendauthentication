@@ -100,6 +100,6 @@ class FeGroupsRepository
             ->from(self::TABLE_NAME)
             ->where('ip_mask != ""')
             ->execute()
-            ->fetchAll();
+            ->fetchAllAssociative();
     }
 }
