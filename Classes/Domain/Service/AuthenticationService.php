@@ -1,10 +1,11 @@
 <?php
+
 declare(strict_types=1);
+
 namespace In2code\In2frontendauthentication\Domain\Service;
 
 use In2code\In2frontendauthentication\Domain\Repository\FeGroupsRepository;
 use In2code\In2frontendauthentication\Utility\ExtensionConfigurationUtility;
-use In2code\In2frontendauthentication\Utility\ObjectUtility;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Authentication\AuthenticationService as AuthenticationServiceCore;
@@ -21,7 +22,7 @@ class AuthenticationService extends AuthenticationServiceCore
      * @param array $knownGroups
      * @return array
      */
-    public function getGroups($user, $knownGroups)
+    public function getGroups(array $user, array $knownGroups): array
     {
         $feGroupsRepository = ObjectUtility::getObjectManager()->get(FeGroupsRepository::class);
         $feGroups = $feGroupsRepository->findByCurrentIpAddress();

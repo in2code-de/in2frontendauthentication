@@ -1,5 +1,7 @@
 <?php
+
 declare(strict_types=1);
+
 namespace In2code\In2frontendauthentication\Domain\Repository;
 
 use In2code\In2frontendauthentication\Exception\ClassDoesNotExistException;
@@ -33,6 +35,8 @@ class FeGroupsRepository
      * Find all fe_groups records with a matching ip_mask definition
      *
      * @return array
+     * @throws \Doctrine\DBAL\DBALException
+     * @throws \Doctrine\DBAL\Driver\Exception
      */
     public function findByCurrentIpAddress(): array
     {
@@ -85,6 +89,8 @@ class FeGroupsRepository
 
     /**
      * @return array
+     * @throws \Doctrine\DBAL\DBALException
+     * @throws \Doctrine\DBAL\Driver\Exception
      */
     protected function getAllGroupsWithIpConfiguration(): array
     {
