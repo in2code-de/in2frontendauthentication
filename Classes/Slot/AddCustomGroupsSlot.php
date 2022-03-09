@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace In2code\In2frontendauthentication\Slot;
 
-use In2code\In2frontendauthentication\Utility\ObjectUtility;
 use In2code\In2frontendauthentication\Domain\Repository\FeGroupsRepository;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Class AddCustomGroupsSlot
@@ -18,7 +18,7 @@ class AddCustomGroupsSlot
      */
     public function addCustomGroups(array $customGroups): array
     {
-        $feGroupsRepository = ObjectUtility::getObjectManager()->get(FeGroupsRepository::class);
+        $feGroupsRepository = GeneralUtility::makeInstance(FeGroupsRepository::class);
         $feGroups = $feGroupsRepository->findByCurrentIpAddress();
         foreach ($feGroups as $feGroup) {
             $customGroups[] = $feGroup['uid'];

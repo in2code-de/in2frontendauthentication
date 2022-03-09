@@ -24,7 +24,8 @@ class AuthenticationService extends AuthenticationServiceCore
      */
     public function getGroups(array $user, array $knownGroups): array
     {
-        $feGroupsRepository = ObjectUtility::getObjectManager()->get(FeGroupsRepository::class);
+        /** @var FeGroupsRepository $feGroupsRepository */
+        $feGroupsRepository = GeneralUtility::makeInstance(FeGroupsRepository::class);
         $feGroups = $feGroupsRepository->findByCurrentIpAddress();
         if (!empty($feGroups)) {
             $this->setCookie(!empty($feGroups));
