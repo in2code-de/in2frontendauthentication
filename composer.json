@@ -13,7 +13,7 @@
   "license": "GPL-3.0",
   "require": {
     "php": "^7.2",
-    "typo3/cms-core": "^9.5 || ^10.4",
+    "typo3/cms-core": "^10.4 || ^11.5",
     "s1lentium/iptools": "1.1.*"
   },
   "replace": {
@@ -22,6 +22,11 @@
   "autoload": {
     "psr-4": {
       "In2code\\In2frontendauthentication\\": "Classes"
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "in2frontendauthentication"
     }
   }
 }

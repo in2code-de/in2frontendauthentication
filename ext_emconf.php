@@ -1,15 +1,5 @@
 <?php
 
-/***************************************************************
- * Extension Manager/Repository config file for ext "powermail".
- *
- * Auto generated 04-07-2013 17:03
- *
- * Manual updates:
- * Only the data in the array - everything else is removed by next
- * writing. "version" and "dependencies" must not be touched!
- ***************************************************************/
-
 $EM_CONF[$_EXTKEY] = [
     'title' => 'in2frontendauthentication',
     'description' => 'Authenticate every visitor as a defined frontend user if IP matches',
@@ -34,8 +24,7 @@ $EM_CONF[$_EXTKEY] = [
     'CGLcompliance_note' => '',
     'constraints' => [
         'depends' => [
-            'typo3' => '9.5.0-10.99.99',
-            'php' => '7.2.0-7.99.99'
+            'typo3' => '11.5.0-11.99.99',
         ],
         'conflicts' => [],
         'suggests' => [],

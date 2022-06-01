@@ -2,36 +2,25 @@
 
 declare(strict_types=1);
 
-namespace In2code\In2frontendauthentication\Domain\Service;
+namespace In2code\In2frontendauthentication\EventListener;
 
 use In2code\In2frontendauthentication\Domain\Repository\FeGroupsRepository;
 use In2code\In2frontendauthentication\Utility\ExtensionConfigurationUtility;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Authentication\AuthenticationService as AuthenticationServiceCore;
+use TYPO3\CMS\Frontend\Authentication\ModifyResolvedFrontendGroupsEvent;
 
-/**
- * Class AuthenticationService
- */
-class AuthenticationService extends AuthenticationServiceCore
+class ModifyFeGroups
 {
-    /**
-     * This method is called in fronted and should bypass the authentication for content elements and pages
-     *
-     * @param array $user
-     * @param array $knownGroups
-     * @return array
-     */
-    public function getGroups(array $user, array $knownGroups): array
+    public function __invoke(ModifyResolvedFrontendGroupsEvent $event): void
     {
-        /** @var FeGroupsRepository $feGroupsRepository */
         $feGroupsRepository = GeneralUtility::makeInstance(FeGroupsRepository::class);
         $feGroups = $feGroupsRepository->findByCurrentIpAddress();
         if (!empty($feGroups)) {
-            $this->setCookie(!empty($feGroups));
-            return $feGroups;
+            $this->setCookie(true);
+            $newGroups = array_merge($event->getGroups(), $feGroups);
+            $event->setGroups($newGroups);
         }
-        return parent::getGroups($user, $knownGroups);
     }
 
     /**
