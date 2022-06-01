@@ -23,17 +23,4 @@ call_user_func(function () {
             'className' => \In2code\In2frontendauthentication\Domain\Service\AuthenticationService::class,
         ]
     );
-
-    /**
-     * SignalSlot section
-     */
-    $signalSlotDispatcher = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
-        \TYPO3\CMS\Extbase\SignalSlot\Dispatcher::class
-    );
-    $signalSlotDispatcher->connect(
-        \BeechIt\FalSecuredownload\Security\CheckPermissions::class,
-        'AddCustomGroups',
-        \In2code\In2frontendauthentication\Slot\AddCustomGroupsSlot::class,
-        'addCustomGroups'
-    );
 });
