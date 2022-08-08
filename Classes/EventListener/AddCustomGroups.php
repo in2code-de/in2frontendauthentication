@@ -20,7 +20,7 @@ class AddCustomGroups
 
         if (!empty($ipBasedGroups)) {
             foreach ($ipBasedGroups as $feGroup) {
-                $newGroups[] = $feGroup['uid'];
+                $newGroups['groups'][$feGroup['uid']] = $feGroup['uid'];
             }
             $event->setCustomUserGroups($newGroups);
         }
