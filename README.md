@@ -63,6 +63,7 @@ This feature can be enabled in the extension settings in the extension manager.
 
 | Version | Date       | State   | Description                                                                          |
 |---------|------------|---------|--------------------------------------------------------------------------------------|
+| 8.0.0   | 2022-09-13 | Feature | Support also PHP 8.x now                                                             |
 | 7.0.1   | 2022-08-08 | Bugfix  | Ensure that this extension works with `beechit/fal-securedownload`                   |
 | 7.0.0   | 2022-06-01 | Task    | Update for TYPO3 11.5                                                                |
 | 6.0.0   | 2020-10-21 | Task    | Update for TYPO3 9.5 or 10.4                                                         |
