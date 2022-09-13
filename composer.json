@@ -12,9 +12,9 @@
   "type": "typo3-cms-extension",
   "license": "GPL-3.0",
   "require": {
-    "php": "^7.2",
+    "php": "^7.2 || ^8.0",
     "typo3/cms-core": "^10.4 || ^11.5",
-    "s1lentium/iptools": "1.1.*"
+    "s1lentium/iptools": "^1.1 || dev-master#88be1aaaab3c50fc131ebe778e246215ff006d8e"
   },
   "replace": {
     "typo3-ter/in2frontendauthentication": "self.version"
