@@ -13,8 +13,8 @@ $columns = [
         'config' => [
             'type' => 'text',
             'cols' => '40',
-            'rows' => '2'
-        ]
+            'rows' => '2',
+        ],
     ],
 ];
 

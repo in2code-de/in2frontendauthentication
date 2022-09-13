@@ -4,10 +4,13 @@ declare(strict_types=1);
 
 namespace In2code\In2frontendauthentication\Domain\Repository;
 
+use Doctrine\DBAL\DBALException;
+use Doctrine\DBAL\Driver\Exception as ExceptionDbalDriver;
 use In2code\In2frontendauthentication\Exception\ClassDoesNotExistException;
 use In2code\In2frontendauthentication\Utility\DatabaseUtility;
 use IPTools\IP;
 use IPTools\Range;
+use Throwable;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
@@ -23,7 +26,7 @@ class FeGroupsRepository
      */
     public function __construct()
     {
-        if (class_exists(\IPTools\Range::class) === false) {
+        if (class_exists(Range::class) === false) {
             throw new ClassDoesNotExistException(
                 'IPTools/Range is not available. Did you install this extension via composer?',
                 1583143391
@@ -35,8 +38,8 @@ class FeGroupsRepository
      * Find all fe_groups records with a matching ip_mask definition
      *
      * @return array
-     * @throws \Doctrine\DBAL\DBALException
-     * @throws \Doctrine\DBAL\Driver\Exception
+     * @throws DBALException
+     * @throws ExceptionDbalDriver
      */
     public function findByCurrentIpAddress(): array
     {
@@ -82,15 +85,15 @@ class FeGroupsRepository
     {
         try {
             return Range::parse($ipRange)->contains(new IP($ip));
-        } catch (\Exception $exception) {
+        } catch (Throwable $exception) {
             return false;
         }
     }
 
     /**
      * @return array
-     * @throws \Doctrine\DBAL\DBALException
-     * @throws \Doctrine\DBAL\Driver\Exception
+     * @throws DBALException
+     * @throws ExceptionDbalDriver
      */
     protected function getAllGroupsWithIpConfiguration(): array
     {
