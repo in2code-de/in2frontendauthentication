@@ -9,11 +9,11 @@ use Doctrine\DBAL\Driver\Exception as ExceptionDbalDriver;
 use In2code\In2frontendauthentication\Domain\Repository\FeGroupsRepository;
 use In2code\In2frontendauthentication\Utility\ExtensionConfigurationUtility;
 use SFC\Staticfilecache\Service\CookieService;
+use TYPO3\CMS\Core\Authentication\AuthenticationService as AuthenticationServiceCore;
 use TYPO3\CMS\Core\Configuration\Exception\ExtensionConfigurationExtensionNotConfiguredException;
 use TYPO3\CMS\Core\Configuration\Exception\ExtensionConfigurationPathDoesNotExistException;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Authentication\AuthenticationService as AuthenticationServiceCore;
 
 /**
  * Class AuthenticationService

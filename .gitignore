@@ -13,3 +13,7 @@ Thumbs.db
 node_modules/
 .sass-cache/
 npm-debug.log
+composer.lock
+/public/
+/vendor/
+/.php-cs-fixer.cache
