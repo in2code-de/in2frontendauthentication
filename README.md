@@ -61,23 +61,24 @@ This feature can be enabled in the extension settings in the extension manager.
 
 ## Changelog
 
-| Version | Date       | State   | Description                                                                          |
-|---------|------------|---------|--------------------------------------------------------------------------------------|
-| 8.0.0   | 2022-09-13 | Feature | Support also PHP 8.x now                                                             |
-| 7.0.1   | 2022-08-08 | Bugfix  | Ensure that this extension works with `beechit/fal-securedownload`                   |
-| 7.0.0   | 2022-06-01 | Task    | Update for TYPO3 11.5                                                                |
-| 6.0.0   | 2020-10-21 | Task    | Update for TYPO3 9.5 or 10.4                                                         |
-| 5.0.2   | 2020-03-11 | Bugfix  | Update dependencies to typo3/cms-core to enable installation in TYPO3 9              |
-| 5.0.1   | 2020-03-02 | Bugfix  | Prevent exception in ExtensionConfigurationUtility                                   |
-| 5.0.0   | 2020-03-02 | Feature | Support subnetmask for IPv4 and IPv6 now in definitions, update requirements         |
+| Version | Date       | State   | Description                                                                                     |
+|---------|------------|---------|-------------------------------------------------------------------------------------------------|
+| 8.0.1   | 2023-04-25 | Bugfix  | Adjust ext_emconf.php TYPO3 requirements to composer.json to also support TYPO3 10              |
+| 8.0.0   | 2022-09-13 | Feature | Support also PHP 8.x now                                                                        |
+| 7.0.1   | 2022-08-08 | Bugfix  | Ensure that this extension works with `beechit/fal-securedownload`                              |
+| 7.0.0   | 2022-06-01 | Task    | Update for TYPO3 11.5                                                                           |
+| 6.0.0   | 2020-10-21 | Task    | Update for TYPO3 9.5 or 10.4                                                                    |
+| 5.0.2   | 2020-03-11 | Bugfix  | Update dependencies to typo3/cms-core to enable installation in TYPO3 9                         |
+| 5.0.1   | 2020-03-02 | Bugfix  | Prevent exception in ExtensionConfigurationUtility                                              |
+| 5.0.0   | 2020-03-02 | Feature | Support subnetmask for IPv4 and IPv6 now in definitions, update requirements                    |
 | 4.0.0   | 2020-01-22 | Feature | Add support for IP V6. This is the first Release with the composer requirement "mlocati/ip-lib" |
-| 3.0.0   | 2020-01-20 | Feature | Support TYPO3 V9. This is the last release without composer requirement              |
-| 2.0.3   | 2019-10-07 | Bugfix  | Fix another regression for the latest feature                                        |
-| 2.0.2   | 2019-10-07 | Bugfix  | Change namespace to CookieService class                                              |
-| 2.0.1   | 2019-10-07 | Bugfix  | Fix exception when instantiating CookieService class of staticfilecache              |
-| 2.0.0   | 2019-09-30 | Feature | Respect staticfilecache cookies                                                      |
-| 1.1.1   | 2017-07-18 | Bugfix  | Signal update from fal_securedownload                                                |
-| 1.1.0   | 2017-07-10 | Feature | Support EXT:fal_securedownload >= version 2.0.0                                      |
-| 1.0.2   | 2016-08-03 | Bugfix  | Allow multiple usergroups                                                            |
-| 1.0.1   | 2016-06-23 | Bugfix  | Small fix in german locallang                                                        |
-| 1.0.0   | 2016-06-10 | Task    | Initial release                                                                      |
+| 3.0.0   | 2020-01-20 | Feature | Support TYPO3 V9. This is the last release without composer requirement                         |
+| 2.0.3   | 2019-10-07 | Bugfix  | Fix another regression for the latest feature                                                   |
+| 2.0.2   | 2019-10-07 | Bugfix  | Change namespace to CookieService class                                                         |
+| 2.0.1   | 2019-10-07 | Bugfix  | Fix exception when instantiating CookieService class of staticfilecache                         |
+| 2.0.0   | 2019-09-30 | Feature | Respect staticfilecache cookies                                                                 |
+| 1.1.1   | 2017-07-18 | Bugfix  | Signal update from fal_securedownload                                                           |
+| 1.1.0   | 2017-07-10 | Feature | Support EXT:fal_securedownload >= version 2.0.0                                                 |
+| 1.0.2   | 2016-08-03 | Bugfix  | Allow multiple usergroups                                                                       |
+| 1.0.1   | 2016-06-23 | Bugfix  | Small fix in german locallang                                                                   |
+| 1.0.0   | 2016-06-10 | Task    | Initial release                                                                                 |
