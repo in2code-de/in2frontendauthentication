@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace In2code\In2frontendauthentication\Domain\Repository;
 
-use Doctrine\DBAL\DBALException;
-use Doctrine\DBAL\Driver\Exception as ExceptionDbalDriver;
+use Doctrine\DBAL\Driver\Exception;
 use In2code\In2frontendauthentication\Exception\ClassDoesNotExistException;
 use In2code\In2frontendauthentication\Utility\DatabaseUtility;
 use IPTools\IP;
@@ -35,11 +34,10 @@ class FeGroupsRepository
     }
 
     /**
-     * Find all fe_groups records with a matching ip_mask definition
+     *  Find all fe_groups records with a matching ip_mask definition
      *
-     * @return array
-     * @throws DBALException
-     * @throws ExceptionDbalDriver
+     * @throws Exception
+     * @throws \Doctrine\DBAL\Exception
      */
     public function findByCurrentIpAddress(): array
     {
@@ -49,7 +47,6 @@ class FeGroupsRepository
 
     /**
      * @param array $groups [fe_groups.*]
-     * @return array
      */
     protected function filterGroupsByCurrentIpAddress(array $groups): array
     {
@@ -61,10 +58,6 @@ class FeGroupsRepository
         return $groups;
     }
 
-    /**
-     * @param string $ipList
-     * @return bool
-     */
     protected function isCurrentIpInList(string $ipList): bool
     {
         $ips = GeneralUtility::trimExplode(',', $ipList, true);
@@ -76,11 +69,6 @@ class FeGroupsRepository
         return false;
     }
 
-    /**
-     * @param string $ip
-     * @param string $ipRange
-     * @return bool
-     */
     protected function isCurrentIpAddressInRangeDefinition(string $ip, string $ipRange): bool
     {
         try {
@@ -91,9 +79,7 @@ class FeGroupsRepository
     }
 
     /**
-     * @return array
-     * @throws DBALException
-     * @throws ExceptionDbalDriver
+     * @throws \Doctrine\DBAL\Exception
      */
     protected function getAllGroupsWithIpConfiguration(): array
     {

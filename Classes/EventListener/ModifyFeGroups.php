@@ -29,7 +29,6 @@ class ModifyFeGroups
     /**
      * Set a cookie if staticfilecache is set to disable caching
      *
-     * @param bool $ipBasedLogin
      * @throws ExtensionConfigurationExtensionNotConfiguredException
      * @throws ExtensionConfigurationPathDoesNotExistException
      */

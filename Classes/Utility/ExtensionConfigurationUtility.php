@@ -12,9 +12,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 class ExtensionConfigurationUtility
 {
     /**
-     * @param string $path
-     * @param string $extensionKey
-     * @return string
      * @throws ExtensionConfigurationExtensionNotConfiguredException
      * @throws ExtensionConfigurationPathDoesNotExistException
      */
@@ -26,7 +23,6 @@ class ExtensionConfigurationUtility
     }
 
     /**
-     * @return bool
      * @throws ExtensionConfigurationExtensionNotConfiguredException
      * @throws ExtensionConfigurationPathDoesNotExistException
      */

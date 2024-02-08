@@ -4,6 +4,7 @@
  * Table configuration fe_users
  */
 use In2code\In2frontendauthentication\Domain\Repository\FeGroupsRepository;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 $columns = [
     'ip_mask' => [
@@ -18,8 +19,8 @@ $columns = [
     ],
 ];
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(FeGroupsRepository::TABLE_NAME, $columns);
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
+ExtensionManagementUtility::addTCAcolumns(FeGroupsRepository::TABLE_NAME, $columns);
+ExtensionManagementUtility::addToAllTCAtypes(
     FeGroupsRepository::TABLE_NAME,
     'ip_mask',
     '',

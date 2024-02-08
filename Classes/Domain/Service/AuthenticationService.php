@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace In2code\In2frontendauthentication\Domain\Service;
 
-use Doctrine\DBAL\DBALException;
 use Doctrine\DBAL\Driver\Exception as ExceptionDbalDriver;
 use In2code\In2frontendauthentication\Domain\Repository\FeGroupsRepository;
 use In2code\In2frontendauthentication\Utility\ExtensionConfigurationUtility;
@@ -21,15 +20,10 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 class AuthenticationService extends AuthenticationServiceCore
 {
     /**
-     * This method is called in fronted and should bypass the authentication for content elements and pages
-     *
-     * @param array $user
-     * @param array $knownGroups
-     * @return array
-     * @throws DBALException
      * @throws ExceptionDbalDriver
      * @throws ExtensionConfigurationExtensionNotConfiguredException
      * @throws ExtensionConfigurationPathDoesNotExistException
+     * @throws \Doctrine\DBAL\Exception
      */
     public function getGroups(array $user, array $knownGroups): array
     {
@@ -46,7 +40,6 @@ class AuthenticationService extends AuthenticationServiceCore
     /**
      * Set a cookie if staticfilecache is set to disable caching
      *
-     * @param bool $ipBasedLogin
      * @throws ExtensionConfigurationExtensionNotConfiguredException
      * @throws ExtensionConfigurationPathDoesNotExistException
      */
