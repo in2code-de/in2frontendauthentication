@@ -4,10 +4,10 @@ on: [push, pull_request]
 jobs:
   php-lint:
     name: "PHP linter"
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: "Checkout"
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: "Install PHP"
         uses: shivammathur/setup-php@v2
         with:
@@ -23,12 +23,14 @@ jobs:
           - 7.4
           - 8.0
           - 8.1
+          - 8.2
+          - 8.3
   typoscript-lint:
     name: "TypoScript linter"
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: "Checkout"
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: "Run TypoScript lint"
         uses: TYPO3-Continuous-Integration/TYPO3-CI-Typoscript-Lint@v1
         with:
@@ -36,11 +38,11 @@ jobs:
           config_file: ".project/tests/typoscript-lint.yml"
   php-cs-fixer:
     name: "PHP CS Fixer"
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     needs: php-lint
     steps:
       - name: "Checkout"
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: "Install PHP"
         uses: shivammathur/setup-php@v2
         with:
