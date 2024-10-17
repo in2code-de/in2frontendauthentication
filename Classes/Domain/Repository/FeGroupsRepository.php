@@ -87,7 +87,7 @@ class FeGroupsRepository
         return (array)$queryBuilder
             ->select('*')
             ->from(self::TABLE_NAME)
-            ->where('ip_mask != ""')
+            ->where('ip_mask != \'\'')
             ->executeQuery()
             ->fetchAllAssociative();
     }
