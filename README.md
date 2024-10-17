@@ -68,7 +68,8 @@ This feature can be enabled in the extension settings in the extension manager.
 
 | Version | Date       | State   | Description                                                                                     |
 |---------|------------|---------|-------------------------------------------------------------------------------------------------|
-| 9.0.0   | 2024-02-08 | TASK    | Update for TYPO3 11LTS and 12LTS                                                                |
+| 9.0.1   | 2024-10-17 | Bugfix  | Prevent sql exception with empty quotes in MySQL                                                |
+| 9.0.0   | 2024-02-08 | Task    | Update for TYPO3 11LTS and 12LTS                                                                |
 | 8.0.1   | 2023-04-25 | Bugfix  | Adjust ext_emconf.php TYPO3 requirements to composer.json to also support TYPO3 10              |
 | 8.0.0   | 2022-09-13 | Feature | Support also PHP 8.x now                                                                        |
 | 7.0.1   | 2022-08-08 | Bugfix  | Ensure that this extension works with `beechit/fal-securedownload`                              |
