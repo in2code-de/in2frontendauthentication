@@ -46,8 +46,10 @@ class AuthenticationService extends AuthenticationServiceCore
     private function setCookie(bool $ipBasedLogin): void
     {
         if (ExtensionManagementUtility::isLoaded('staticfilecache')) {
+            /** @var DateTimeService $dateTimeService */
+            $dateTimeService = GeneralUtility::makeInstance(DateTimeService::class);
             /** @var CookieService $cookieService */
-            $cookieService = GeneralUtility::makeInstance(CookieService::class);
+            $cookieService = GeneralUtility::makeInstance(CookieService::class, $dateTimeService);
             $time = time() - 3600;
             if (ExtensionConfigurationUtility::isSfcCookie() && $ipBasedLogin === true) {
                 $time = time() + 3600;
