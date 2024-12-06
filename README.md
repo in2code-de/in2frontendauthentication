@@ -68,6 +68,7 @@ This feature can be enabled in the extension settings in the extension manager.
 
 | Version | Date       | State   | Description                                                                                     |
 |---------|------------|---------|-------------------------------------------------------------------------------------------------|
+| 9.0.2   | 2024-12-06 | Bugfix  | Make extension compatible with latest release of EXT:staticfilecache                            |
 | 9.0.1   | 2024-10-17 | Bugfix  | Prevent sql exception with empty quotes in MySQL                                                |
 | 9.0.0   | 2024-02-08 | Task    | Update for TYPO3 11LTS and 12LTS                                                                |
 | 8.0.1   | 2023-04-25 | Bugfix  | Adjust ext_emconf.php TYPO3 requirements to composer.json to also support TYPO3 10              |
