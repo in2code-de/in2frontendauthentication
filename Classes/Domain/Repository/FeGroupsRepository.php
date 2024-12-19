@@ -9,6 +9,7 @@ use In2code\In2frontendauthentication\Exception\ClassDoesNotExistException;
 use In2code\In2frontendauthentication\Utility\DatabaseUtility;
 use IPTools\IP;
 use IPTools\Range;
+use Psr\Http\Message\ServerRequestInterface;
 use Throwable;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -19,11 +20,13 @@ class FeGroupsRepository
 {
     const TABLE_NAME = 'fe_groups';
 
+    private ServerRequestInterface $request;
+
     /**
      * FeGroupsRepository constructor.
      * @throws ClassDoesNotExistException
      */
-    public function __construct()
+    public function __construct(ServerRequestInterface $request)
     {
         if (class_exists(Range::class) === false) {
             throw new ClassDoesNotExistException(
@@ -31,6 +34,7 @@ class FeGroupsRepository
                 1583143391
             );
         }
+        $this->request = $request;
     }
 
     /**
@@ -62,7 +66,10 @@ class FeGroupsRepository
     {
         $ips = GeneralUtility::trimExplode(',', $ipList, true);
         foreach ($ips as $ip) {
-            if ($this->isCurrentIpAddressInRangeDefinition(GeneralUtility::getIndpEnv('REMOTE_ADDR'), $ip) === true) {
+            if ($this->isCurrentIpAddressInRangeDefinition(
+                    $this->request->getAttribute('normalizedParams')->getRemoteAddress(), $ip
+                ) === true)
+            {
                 return true;
             }
         }

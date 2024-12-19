@@ -18,7 +18,7 @@ class ModifyFeGroups
 {
     public function __invoke(ModifyResolvedFrontendGroupsEvent $event): void
     {
-        $feGroupsRepository = GeneralUtility::makeInstance(FeGroupsRepository::class);
+        $feGroupsRepository = GeneralUtility::makeInstance(FeGroupsRepository::class, $event->getRequest());
         $feGroups = $feGroupsRepository->findByCurrentIpAddress();
         if (!empty($feGroups)) {
             $this->setCookie(true);
