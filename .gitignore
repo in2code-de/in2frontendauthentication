@@ -17,3 +17,6 @@ composer.lock
 /public/
 /vendor/
 /.php-cs-fixer.cache
+var/
+config/
+.build/
