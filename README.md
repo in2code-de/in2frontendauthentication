@@ -42,8 +42,7 @@ Simply define more ip addresses or ranges and split them with comma.
 
 ## Supported TYPO3- and PHP-Versions
 
-* TYPO3 11.5
-* TYPO3 12.4
+* TYPO3 13.4
 
 * PHP 7.4
 * PHP 8.0
@@ -64,10 +63,47 @@ EXT:in2frontendauthentication there are no specific frontend users, so it must b
 
 This feature can be enabled in the extension settings in the extension manager.
 
+## Your Contribution
+
+**Pull requests** are welcome in general! Nevertheless please don't forget to add a description to your pull requests. This
+is very helpful to understand what kind of issue the **PR** is going to solve.
+
+- Bugfixes: Please describe what kind of bug your fix solve and give me feedback how to reproduce the issue. I'm going
+  to accept only bugfixes if I can reproduce the issue.
+- Features: Not every feature is relevant for the bulk of extension users. Please discuss a new feature before.
+
+### Contribution with ddev
+
+#### Requirements
+
+1. Install ddev, see: https://ddev.readthedocs.io/en/stable/#installation
+2. Install git-lfs, see: https://git-lfs.github.com/
+
+#### Installation
+
+1. Clone this repository
+2. Run `ddev start`
+3. Run `ddev initialize` to setup configurations and test database
+
+#### Branches
+
+* Main Branch - Next Major Version
+* typo3-v12: Version 5.x for TYPO3 12
+* typo3-v13: Version V13 for TYPO3 13
+
+## Early Access Programm for TYPO3 14 support
+
+:information_source: **TYPO3 14 compatibility**
+> See [EAP page (DE)](https://www.in2code.de/agentur/typo3-extensions/early-access-programm/) or
+> [EAP page (EN)](https://www.in2code.de/en/agency/typo3-extensions/early-access-program/) for more information how
+> to get access to a TYPO3 14 version
+
+
 ## Changelog
 
 | Version | Date       | State   | Description                                                                                     |
 |---------|------------|---------|-------------------------------------------------------------------------------------------------|
+| 13.0.0  | 2025-08-97 | TASK    | Update for TYPO3 13LTS  
 | 9.0.0   | 2024-02-08 | TASK    | Update for TYPO3 11LTS and 12LTS                                                                |
 | 8.0.1   | 2023-04-25 | Bugfix  | Adjust ext_emconf.php TYPO3 requirements to composer.json to also support TYPO3 10              |
 | 8.0.0   | 2022-09-13 | Feature | Support also PHP 8.x now                                                                        |
