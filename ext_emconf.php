@@ -4,14 +4,14 @@ $EM_CONF[$_EXTKEY] = [
     'title' => 'in2frontendauthentication',
     'description' => 'Authenticate every visitor as a defined frontend user if IP matches',
     'category' => 'plugin',
-    'version' => '9.0.2',
+    'version' => '13.0.0',
     'state' => 'stable',
     'author' => 'Alex Kellner',
     'author_email' => 'alexander.kellner@in2code.de',
     'author_company' => 'in2code.de',
     'constraints' => [
         'depends' => [
-            'typo3' => '11.5.0-12.99.99',
+            'typo3' => '12.4.0-13.4.99',
         ],
         'conflicts' => [],
         'suggests' => [],
