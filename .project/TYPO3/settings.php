@@ -76,6 +76,7 @@ return [
     ],
     'SYS' => [
         'UTF8filesystem' => true,
+        'trustedHostsPattern' => 'in2frontendauthentication.ddev.site',
         'caching' => [
             'cacheConfigurations' => [
                 'hash' => [
@@ -96,7 +97,7 @@ return [
             ],
         ],
         'devIPmask' => '',
-        'displayErrors' => 0,
+        'displayErrors' => 1,
         'encryptionKey' => '1c10cfee78a7f032f02ba2387bfafabdf0034d1cddff3aa4b3391e79d0f6deb7b0f3fff337696d415a97e35abb7239ca',
         'exceptionalErrors' => 4096,
         'features' => [
